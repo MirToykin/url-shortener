@@ -4,6 +4,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"gitlab.com/mt65/url-shortner/internal/config"
+	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/redirect"
 	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/save"
 	mwLogger "gitlab.com/mt65/url-shortner/internal/http-server/middleware/logger"
 	"gitlab.com/mt65/url-shortner/internal/lib/logger/handlers/slogpretty"
@@ -38,9 +39,10 @@ func main() {
 	router.Use(middleware.RealIP)
 	router.Use(mwLogger.New(log))
 	router.Use(middleware.Recoverer)
-	router.Use(middleware.URLFormat)
+	//router.Use(middleware.URLFormat)
 
 	router.Post("/url", save.New(log, storage))
+	router.Get("/{alias}", redirect.New(log, storage))
 
 	log.Info("starting server", slog.String("address", cfg.HTTPServer.Address))
 
