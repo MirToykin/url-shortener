@@ -48,7 +48,7 @@ func TestSaveHandler(t *testing.T) {
 			respError: "field URL is not a valid URL",
 		},
 		{
-			name:      "SaveURL Error",
+			name:      "SaveUrl Error",
 			alias:     "test_alias",
 			url:       "https://google.com",
 			respError: "failed to add url",
@@ -65,7 +65,7 @@ func TestSaveHandler(t *testing.T) {
 			urlSaverMock := mocks.NewURLSaver(t)
 
 			if tc.respError == "" || tc.mockError != nil {
-				urlSaverMock.On("SaveURL", tc.url, mock.AnythingOfType("string")).
+				urlSaverMock.On("SaveUrl", tc.url, mock.AnythingOfType("string")).
 					Return(int64(1), tc.mockError).
 					Once()
 			}

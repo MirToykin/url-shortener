@@ -5,6 +5,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"gitlab.com/mt65/url-shortner/internal/config"
 	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/redirect"
+	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/remove"
 	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/save"
 	mwLogger "gitlab.com/mt65/url-shortner/internal/http-server/middleware/logger"
 	"gitlab.com/mt65/url-shortner/internal/lib/logger/handlers/slogpretty"
@@ -47,6 +48,7 @@ func main() {
 		}))
 
 		r.Post("/", save.New(log, storage))
+		r.Delete("/", remove.New(log, storage))
 	})
 
 	router.Get("/{alias}", redirect.New(log, storage))

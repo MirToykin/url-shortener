@@ -87,9 +87,9 @@ func New(log *slog.Logger, urlSaver URLSaver) http.HandlerFunc {
 			}
 		}
 
-		id, err := urlSaver.SaveUrl(req.URL, req.Alias)
+		id, err := urlSaver.SaveUrl(req.URL, alias)
 		if errors.Is(err, storage.ErrAliasExists) {
-			log.Info("alias exists", slog.String("alias", req.Alias))
+			log.Info("alias exists", slog.String("alias", alias))
 
 			render.JSON(w, r, resp.Error("url already exists"))
 
@@ -104,7 +104,7 @@ func New(log *slog.Logger, urlSaver URLSaver) http.HandlerFunc {
 			return
 		}
 
-		log.Info("url added", slog.Int64("id", id), slog.String("alias", req.Alias), slog.String("url", req.URL))
+		log.Info("url added", slog.Int64("id", id), slog.String("alias", alias), slog.String("url", req.URL))
 		responseOk(w, r, alias)
 	}
 }
