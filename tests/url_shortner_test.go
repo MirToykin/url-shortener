@@ -9,9 +9,9 @@ import (
 	"github.com/gavv/httpexpect/v2"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/save"
-	"gitlab.com/mt65/url-shortner/internal/lib/api"
-	"gitlab.com/mt65/url-shortner/internal/lib/random"
+	"github.com/MirToykin/url-shortner/internal/http-server/handlers/url/save"
+	"github.com/MirToykin/url-shortner/internal/lib/api"
+	"github.com/MirToykin/url-shortner/internal/lib/random"
 )
 
 const (

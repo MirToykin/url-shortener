@@ -1,4 +1,4 @@
-module gitlab.com/mt65/url-shortner
+module github.com/MirToykin/url-shortner
 
 go 1.20
 

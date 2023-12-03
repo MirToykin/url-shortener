@@ -2,12 +2,12 @@ package redirect
 
 import (
 	"errors"
+	resp "github.com/MirToykin/url-shortner/internal/lib/api/response"
+	"github.com/MirToykin/url-shortner/internal/lib/logger/sl"
+	"github.com/MirToykin/url-shortner/internal/storage"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"
-	resp "gitlab.com/mt65/url-shortner/internal/lib/api/response"
-	"gitlab.com/mt65/url-shortner/internal/lib/logger/sl"
-	"gitlab.com/mt65/url-shortner/internal/storage"
 	"golang.org/x/exp/slog"
 	"net/http"
 )

@@ -12,9 +12,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/save"
-	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/url/save/mocks"
-	"gitlab.com/mt65/url-shortner/internal/lib/logger/handlers/slogdiscard"
+	"github.com/MirToykin/url-shortner/internal/http-server/handlers/url/save"
+	"github.com/MirToykin/url-shortner/internal/http-server/handlers/url/save/mocks"
+	"github.com/MirToykin/url-shortner/internal/lib/logger/handlers/slogdiscard"
 )
 
 func TestSaveHandler(t *testing.T) {

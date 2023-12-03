@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/redirect"
-	"gitlab.com/mt65/url-shortner/internal/http-server/handlers/redirect/mocks"
-	"gitlab.com/mt65/url-shortner/internal/lib/api"
-	"gitlab.com/mt65/url-shortner/internal/lib/logger/handlers/slogdiscard"
+	"github.com/MirToykin/url-shortner/internal/http-server/handlers/redirect"
+	"github.com/MirToykin/url-shortner/internal/http-server/handlers/redirect/mocks"
+	"github.com/MirToykin/url-shortner/internal/lib/api"
+	"github.com/MirToykin/url-shortner/internal/lib/logger/handlers/slogdiscard"
 )
 
 func TestSaveHandler(t *testing.T) {
